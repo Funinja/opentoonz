@@ -6,7 +6,7 @@ jobs:
   Windows:
     runs-on: windows-2019
     env:
-      vcpkg_ref: 14e7bb4ae24616ec54ff6b2f6ef4e8659434ea44
+      vcpkg_ref: cd5e746ec203c8c3c61647e0886a8df8c1e78e41
       BOOST_ROOT: ${{github.workspace}}/3rdparty/boost
       BOOST_URL: https://sourceforge.net/projects/boost/files/boost/1.72.0/boost_1_72_0.tar.bz2/download
       QT_ROOT: ${{github.workspace}}/3rdparty/qt
