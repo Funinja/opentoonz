@@ -96,6 +96,7 @@ jobs:
 
     - name: Build libtiff
       run: |
+        $env:LTIFF = '${{env.PWD}}/thirdparty/tiff-4.0.3/lib/LibTIFF-4.0.3_2015_64.lib'
         cd thirdparty/tiff-4.0.3
         cp libtiff/tif_config.vc.h libtiff/tif_config.h
         cp libtiff/tiffconf.vc.h libtiff/tiffconf.h
@@ -154,7 +155,6 @@ jobs:
 
     - name: Build
       run: |
-        $env:LTIFF = '${{PWD}}/thirdparty/tiff-4.0.3/lib/LibTIFF-4.0.3_2015_64.lib'
         cd toonz
         mkdir build | Out-Null
         cd build
