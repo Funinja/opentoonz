@@ -30,8 +30,10 @@ jobs:
 
     - name: Install vcpkg
       run: |
+        echo ${{env.GITHUB_WORKSPACE}}
+        
         $env:LTIFF = '${{env.GITHUB_WORKSPACE}}/thirdparty/tiff-4.0.3/lib/LibTIFF-4.0.3_2015_64.lib'
-        echo $env.LTIFF
+        echo $env:LTIFF
         rm -r -fo C:/vcpkg
         cd C:/
         git clone https://github.com/Microsoft/vcpkg
