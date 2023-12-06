@@ -30,6 +30,8 @@ jobs:
 
     - name: Install vcpkg
       run: |
+        cd C:/vcpkg/scripts/buildsystems/
+        ls
         rm -r -fo C:/vcpkg
         cd C:/
         git clone https://github.com/Microsoft/vcpkg
@@ -153,7 +155,7 @@ jobs:
         cd build
         $env:BOOST_ROOT = '${{ env.BOOST_ROOT }}'
         $env:QT_PATH = '${{ env.QT_ROOT }}/Qt5.15.2_wintab/5.15.2_wintab/msvc2019_64'
-        cmake ../sources -G 'Visual Studio 16 2019' -Ax64 -DQT_PATH="$env:QT_PATH" -DOpenCV_DIR='C:/vcpkg/installed/x64-windows/share/opencv' -DBOOST_ROOT="$env:BOOST_ROOT" -DWITH_WINTAB=ON
+        cmake ../sources -G 'Visual Studio 16 2019' -Ax64 -DCMAKE_TOOLCHAIN_FILE=C:/vcpkg/scripts/buildsystems/vcpkg.cmake -DQT_PATH="$env:QT_PATH" -DOpenCV_DIR='C:/vcpkg/installed/x64-windows/share/opencv' -DBOOST_ROOT="$env:BOOST_ROOT" -DWITH_WINTAB=ON
         cmake --build . --config Release
 
     - name: Create Artifact
