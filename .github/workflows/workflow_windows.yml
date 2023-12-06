@@ -30,8 +30,6 @@ jobs:
 
     - name: Install vcpkg
       run: |
-        cd C:/vcpkg/scripts/buildsystems/
-        ls
         rm -r -fo C:/vcpkg
         cd C:/
         git clone https://github.com/Microsoft/vcpkg
