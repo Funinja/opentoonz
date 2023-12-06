@@ -49,7 +49,7 @@ jobs:
         vcpkg install --clean-after-build --triplet x64-windows icu
         vcpkg install --clean-after-build --triplet x64-windows-static json-c libjpeg-turbo libpng lz4 lzo openblas zlib
         vcpkg install --clean-after-build --triplet x64-windows freeglut glew
-        vcpkg install --clean-after-build --triplet x64-windows --recurse opencv[world]
+        vcpkg install --clean-after-build --triplet x64-windows --recurse opencv
         vcpkg install --clean-after-build --triplet x64-windows protobuf
         ls -Recurse C:/vcpkg/installed -Filter *.pdb | rm
     - name: Cache Qt
@@ -149,8 +149,6 @@ jobs:
         ls
     - name: Build
       run: |
-        cd C:/vcpkg/installed/x64-windows/bin
-        ls
         cd toonz
         mkdir build | Out-Null
         cd build
