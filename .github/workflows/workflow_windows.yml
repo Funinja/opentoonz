@@ -11,6 +11,7 @@ jobs:
       BOOST_URL: https://sourceforge.net/projects/boost/files/boost/1.72.0/boost_1_72_0.tar.bz2/download
       QT_ROOT: ${{github.workspace}}/3rdparty/qt
       QT_URL: https://github.com/shun-iwasawa/qt5/releases/download/v5.15.2_wintab/Qt5.15.2_wintab.zip
+      LTIFF: ${{github.workspace}}/thirdparty/tiff-4.0.3/lib/LibTIFF-4.0.3_2015_64.lib
     steps:
     - uses: actions/checkout@v2
 
@@ -30,10 +31,6 @@ jobs:
 
     - name: Install vcpkg
       run: |
-        echo ${{github.workspace}}
-        
-        $env:LTIFF = '${{env.GITHUB_WORKSPACE}}/thirdparty/tiff-4.0.3/lib/LibTIFF-4.0.3_2015_64.lib'
-        echo $env:LTIFF
         rm -r -fo C:/vcpkg
         cd C:/
         git clone https://github.com/Microsoft/vcpkg
