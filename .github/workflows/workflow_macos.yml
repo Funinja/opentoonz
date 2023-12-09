@@ -35,7 +35,8 @@ jobs:
             fi
             shift
           done
-        }        
+        } 
+        brew update
         checkPkgAndInstall opencv
 
         echo "success"
