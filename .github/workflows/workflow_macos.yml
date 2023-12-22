@@ -43,8 +43,9 @@ jobs:
           done
         }        
         brew update
-        brew update
-        brew doctor
+        brew untap homebrew/cask
+        brew untap homebrew/core
+        brew cleanup
         checkPkgAndInstall pkg-config glew lz4 libjpeg libpng lzo boost libusb libmypaint ccache jpeg-turbo ninja
         checkPkgAndInstall opencv
         # opencv depends on vtk and vtk depends on qt6
